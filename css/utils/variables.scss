@@ -1,0 +1,60 @@
+// -------------------------------
+// ✅ Breakpoints (반응형 기준점)
+// -------------------------------
+$mobile: 767px;
+$tablet: 1023px; // 일반적으로 태블릿 max는 1023px 사용
+$desktop: 1440px;
+// $widescreen: 1920px;
+
+// -------------------------------
+// ✅ Colors (기본 색상 팔레트)
+// -------------------------------
+$primary-color: #d64541;
+$secondary-color: #f5d76e;
+$accent-color: #3fc380;
+
+$text-color: #222;
+$text-light: #777;
+$background-color: #fff;
+$background-alt: #f9f9f9;
+$border-color: #ddd;
+$dark-background: #111;
+
+// -------------------------------
+// ✅ Typography
+// -------------------------------
+$font-base: "Noto Sans KR", sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$heading-font-weight: 700;
+
+// -------------------------------
+// ✅ Spacing
+// -------------------------------
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+
+// -------------------------------
+// ✅ Radius
+// -------------------------------
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+
+// -------------------------------
+// ✅ Z-index
+// -------------------------------
+$z-header: 1000;
+$z-overlay: 1100;
+$z-modal: 1200;
+
+// -------------------------------
+// ✅ Shadows
+// -------------------------------
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
