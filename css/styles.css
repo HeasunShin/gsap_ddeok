@@ -155,7 +155,6 @@ section h2 {
   padding: 100px 0;
   background: #fdfdfb;
   overflow: visible;
-  border: 3px solid red;
 }
 .promise-section .promise-inner {
   display: flex;
@@ -467,7 +466,6 @@ section h2 {
 }
 .product-section .review-section .review-inner .review-left {
   position: relative;
-  background-color: red;
   width: 50%;
   flex-shrink: 0;
   position: sticky;

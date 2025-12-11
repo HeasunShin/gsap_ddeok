@@ -173,7 +173,6 @@ section {
   padding: 100px 0;
   background: #fdfdfb;
   overflow: visible;
-  border: 3px solid red;
 
   .promise-inner {
     display: flex;
@@ -557,7 +556,6 @@ section {
         // align-self: flex-start;
         // flex: 1;
         position: relative;
-        background-color: red;
         width: 50%;
         flex-shrink: 0;
         position: sticky;
