@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이득떡 클론코딩</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/Flip.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo" id="logo">
+        <span>☰</span>
+        <!-- 햄버거 아이콘 -->
+        <strong>이득떡</strong>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-item">
+            전체상품
+            <ul class="submenu">
+              <li>시그니처 떡</li>
+              <li>프리미엄 떡</li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            브랜드소개
+            <ul class="submenu">
+              <li>철학</li>
+              <li>연혁</li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            고객센터
+            <ul class="submenu">
+              <li>FAQ</li>
+              <li>문의하기</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="hamburger-menu" id="hamburgerMenu">
+      <div class="menu-content">
+        <button id="closeMenu">닫기 ✕</button>
+        <ul>
+          <li>전체상품</li>
+          <li>브랜드소개</li>
+          <li>고객센터</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- hero-section  -->
+    <section class="hero-section">
+      <div class="hero-fixed">
+        <div class="hero-text left" id="leftText">부드러운 팥앙금</div>
+        <div class="hero-text right" id="rightText">쫀득한 찹쌀피</div>
+
+        <div class="hero-img-slide" id="heroImgSlide">
+          <img src="images/chapsaltteok1.png" />
+          <img src="images/chapsaltteok2.png" />
+          <img src="images/chapsaltteok3.png" />
+          <img src="images/chapsaltteok4.png" />
+        </div>
+      </div>
+    </section>
+
+    <!-- promise-section  -->
+    <section class="promise-section">
+      <div class="promise-inner">
+        <div class="promise-fixed">
+          <h2>정직한 재료, 장인의 고집</h2>
+          <img src="./images/chapsaltteok1.png" alt="로고" />
+        </div>
+        <div class="promise-scroll">
+          <div class="promise-item">
+            <img src="./images/item01.png" alt="" />
+            <p>정직한 재료만 고집합니다.</p>
+          </div>
+          <div class="promise-item">
+            <img src="./images/item01.png" alt="" />
+            <p>반세기 장인의 손맛을 담았습니다.</p>
+          </div>
+          <div class="promise-item">
+            <img src="./images/item01.png" alt="" />
+            <p>전통 제조 방식을 지켜갑니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- timeline-section  -->
+    <section class="timeline-section">
+      <div class="timeline-inner">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <h3>1974</h3>
+            <p>장인 첫 창업과 전통 떡 제조 시작</p>
+          </div>
+          <div class="timeline-right">
+            <img src="img/1974.jpg" alt="1974 사진" />
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <h3>2005</h3>
+            <p>제주 쑥떡 공식 출시</p>
+          </div>
+          <div class="timeline-right">
+            <img src="img/2005.jpg" alt="2005 사진" />
+          </div>
+        </div>
+
+        <!-- 더 많은 항목 반복 -->
+      </div>
+    </section>
+
+    <!-- section-cards  -->
+    <section class="section-cards">
+      <div class="cards-wrapper">
+        <article class="card">
+          <img src="path/to/image1.jpg" alt="카드 이미지 1" />
+          <div class="card-text">
+            <h3>장인 이야기 1</h3>
+            <p>첫 번째 카드 설명 텍스트입니다.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="path/to/image2.jpg" alt="카드 이미지 2" />
+          <div class="card-text">
+            <h3>장인 이야기 2</h3>
+            <p>두 번째 카드 설명 텍스트입니다.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="path/to/image3.jpg" alt="카드 이미지 3" />
+          <div class="card-text">
+            <h3>장인 이야기 3</h3>
+            <p>세 번째 카드 설명 텍스트입니다.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- history-section  -->
+    <section class="history-section">
+      <div class="history-inner">
+        <!-- 1. 큰 타이틀 -->
+        <div class="history-heading">
+          <h2>우리의 이야기</h2>
+          <p>전통과 함께한 장인의 시간</p>
+        </div>
+      </div>
+    </section>
+    <section class="product-section">
+      <div class="product-intro-section">
+        <div class="product-inner">
+          <div class="product-left">
+            <div class="product-items-wrapper">
+              <div class="product-item">제품 1</div>
+              <div class="product-item">제품 2</div>
+              <div class="product-item">제품 3</div>
+              <div class="product-item">제품 4</div>
+              <div class="product-item">제품 5</div>
+            </div>
+          </div>
+          <div class="product-right">
+            <div class="fixed-text">
+              <h2>제품 소개</h2>
+              <p>
+                이곳은 고정 텍스트 영역입니다. 제품 설명 혹은 브랜드 메시지를
+                넣을 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3. 인기 상품 4개 -->
+      <div class="best-product-section">
+        <h2>인기 상품</h2>
+        <div class="best-products">
+          <div class="best-product">인기상품 1</div>
+          <div class="best-product">인기상품 2</div>
+          <div class="best-product">인기상품 3</div>
+          <div class="best-product">인기상품 4</div>
+        </div>
+      </div>
+      <!-- 4. 후기 영역 -->
+      <div class="review-section">
+        <div class="review-inner">
+          <div class="review-left">
+            <h3>고객 후기</h3>
+            <p>사랑받아온 이유</p>
+          </div>
+          <div class="review-right">
+            <div class="review-wrapper">
+              <article class="review">후기 1</article>
+              <article class="review">후기 2</article>
+              <article class="review">후기 3</article>
+              <article class="review">후기 1</article>
+              <article class="review">후기 2</article>
+              <article class="review">후기 3</article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-list-list">
+        <!-- 111 <br />111 <br />111 <br />111 <br />111 <br />111 <br />111
+        <br />111 <br />111 <br />111 <br />111 <br />111 <br />111 <br />111
+        <br /> -->
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-inner">
+        <div class="brand-left">1</div>
+        <div class="brand-right">2</div>
+      </div>
+      <img src="/images/mouse2.png" class="mouse-follow left-img" />
+      <img src="/images/mouse3.png" class="mouse-follow right-img" />
+    </section>
+    <section class="branch-section">
+      <div class="branch-inner">
+        <div class="branch branch-left">지점1</div>
+        <div class="branch branch-right">지점2</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-item">이용안내</div>
+      <div class="footer-item">고객센터</div>
+      <div class="footer-item">사업자 정보</div>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script src="./script/promise.js"></script>
+    <script src="./script/timeline.js"></script>
+    <script src="./script/card.js"></script>
+    <script src="./script/overlap.js"></script>
+    <script src="./script/productIntro.js"></script>
+    <script src="./script/review.js"></script>
+    <script src="./script/brand.js"></script>
+  </body>
+</html>

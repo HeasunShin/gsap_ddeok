@@ -1,0 +1,10 @@
+{
+  "name": "screenshot-bot",
+  "version": "1.0.0",
+  "scripts": {
+    "capture": "node screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^20.0.0"
+  }
+}
