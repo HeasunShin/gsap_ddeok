@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이득떡 클론코딩</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <title>이낙근찹쌀떡 클론코딩</title>
+    <link rel="stylesheet" href="./scss/common.css" />
+    <link rel="stylesheet" href="./scss/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
@@ -12,10 +13,12 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="logo" id="logo">
+      <div class="logo-wrap" id="logo">
         <span>☰</span>
         <!-- 햄버거 아이콘 -->
-        <strong>이득떡</strong>
+        <div class="logo">
+          <img src="./images/main-logo.png" alt="" />
+        </div>
       </div>
       <nav class="main-nav">
         <ul>
@@ -57,14 +60,14 @@
     <!-- hero-section  -->
     <section class="hero-section">
       <div class="hero-fixed">
-        <div class="hero-text left" id="leftText">부드러운 팥앙금</div>
-        <div class="hero-text right" id="rightText">쫀득한 찹쌀피</div>
+        <div class="hero-text left" id="leftText">마시는 식이섬유</div>
+        <div class="hero-text right" id="rightText">미에로화이바</div>
 
         <div class="hero-img-slide" id="heroImgSlide">
           <img src="images/chapsaltteok1.png" />
           <img src="images/chapsaltteok2.png" />
           <img src="images/chapsaltteok3.png" />
-          <img src="images/chapsaltteok4.png" />
+          <!-- <img src="images/chapsaltteok4.png" /> -->
         </div>
       </div>
     </section>
@@ -72,29 +75,88 @@
     <!-- promise-section  -->
     <section class="promise-section">
       <div class="promise-inner">
-        <div class="promise-fixed">
-          <h2>정직한 재료, 장인의 고집</h2>
-          <img src="./images/chapsaltteok1.png" alt="로고" />
+        <div class="promise-fixed-wrap">
+          <div class="promise-fixed">
+            <h2>당신이 몰랐던 식이섬유</h2>
+            <img src="./images/item01.png" alt="로고" />
+          </div>
         </div>
+
         <div class="promise-scroll">
           <div class="promise-item">
-            <img src="./images/item01.png" alt="" />
-            <p>정직한 재료만 고집합니다.</p>
+            <h3>식이섬유란?</h3>
+            <p>
+              사람의 소화효소로 분해되지 않는 성분, 몸 속의 과다한 양분흡수를
+              막아주고, 장의 리듬을 조절하며,음식물이 장 속에 머무는 시간을
+              단축시키는 등 현대 식생활에 꼭 필요한 물질로 제 7의 영양소로 주목
+              받고 있음
+            </p>
+            <p class="caption">※ 출처 : 파워푸드 슈퍼푸드 사전</p>
           </div>
           <div class="promise-item">
-            <img src="./images/item01.png" alt="" />
-            <p>반세기 장인의 손맛을 담았습니다.</p>
+            <h3>식이섬유의 기능</h3>
+            <ul>
+              <li>배설활동 촉진, 변비 예방</li>
+              <li>대사질환에 효과적</li>
+              <li>콜레스테롤 감소</li>
+            </ul>
           </div>
           <div class="promise-item">
-            <img src="./images/item01.png" alt="" />
-            <p>전통 제조 방식을 지켜갑니다.</p>
+            <h3>식이섬유를 섭취하려면?</h3>
+            <div class="img-area">
+              <div class="img-box">
+                <img src="./images/item02.png" alt="" />
+                <div class="text-box">
+                  <p>딸기6개</p>
+                  <p>바나나 1개</p>
+                  <p>토마토 2개</p>
+                  <p>미에로 100mL</p>
+                </div>
+              </div>
+              <div class="img-box">
+                <img src="./images/item03.png" alt="" />
+                <div class="text-box">
+                  <p>딸기 13개</p>
+                  <p>바나나 2개</p>
+                  <p>토마토 4개</p>
+                  <p>미에로 210mL</p>
+                </div>
+              </div>
+              <div class="img-box">
+                <img src="./images/item04.png" alt="" />
+                <div class="text-box">
+                  <p>딸기 43개</p>
+                  <p>바나나 4개</p>
+                  <p>귤 7개</p>
+                  <p>미에로화이바<br />SPARKLING ZERO<br />SUGAR 350mL</p>
+                </div>
+              </div>
+              <div class="img-box">
+                <img src="./images/item05.png" alt="" />
+                <div class="text-box">
+                  <p>딸기 72개</p>
+                  <p>바나나 12개</p>
+                  <p>토마토 24개</p>
+                  <p>미에로 1.2L</p>
+                </div>
+              </div>
+            </div>
+            <div class="caption-wrap">
+              <p class="caption">
+                ※ 딸기 21g/개, 바나나 100g/개, 토마토 175g/개 기준
+              </p>
+              <p class="caption mt-0">
+                ※ 출처 : 식품교환표(대한영양사협회 2010년판),
+                한국인영양섭취기준(한국영양학회 2010년 개정판)
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- timeline-section  -->
-    <section class="timeline-section">
+    <!-- <section class="timeline-section">
       <div class="timeline-inner">
         <div class="timeline-item">
           <div class="timeline-left">
@@ -115,30 +177,69 @@
             <img src="img/2005.jpg" alt="2005 사진" />
           </div>
         </div>
-
-        <!-- 더 많은 항목 반복 -->
       </div>
-    </section>
+    </section> -->
 
     <!-- section-cards  -->
     <section class="section-cards">
+      <div class="cards-outside">
+        <div class="flex-area">
+          <div class="text-box">
+            <div class="card-title-area">
+              <h2>
+                <span class="small-title">Brand story</span
+                ><span>브랜드 스토리</span>
+              </h2>
+              <p>미에로는 아름다움을 디자인하는 토탈 솔루션 음료입니다.</p>
+            </div>
+            <div class="text-inbox">
+              <h3>미에로 Meaning</h3>
+              <p>
+                미에로는 미 (美, 아름다움)을 대표하는 브랜드로서, 건강한
+                아름다움 즉, 내/외적 아름다운 조화를 상징합니다.
+              </p>
+            </div>
+            <div class="text-inbox">
+              <h3>미에로 Vision</h3>
+              <p>건강한 아름다움을 가꾸어 주는 음료</p>
+            </div>
+            <div class="text-inbox">
+              <h3>미에로 Misson</h3>
+              <p>
+                몸과 마음의 균형을 잃어가는 현대인들에게 삶의 자신감과 행복을
+                느낄 수 있도록, 미에로만의 Beauty Solution을 제공합니다. <br />
+                몸매, 장 각각에 필요한 Solution을 미에로화이바, 헬씨올리고가
+                드립니다.
+              </p>
+            </div>
+          </div>
+          <div class="img-box">
+            <img src="./images/item06.png" alt="item06" />
+          </div>
+        </div>
+      </div>
       <div class="cards-wrapper">
         <article class="card">
-          <img src="path/to/image1.jpg" alt="카드 이미지 1" />
+          <img class="card-img" src="./images/item07.png" alt="카드 이미지 1" />
           <div class="card-text">
-            <h3>장인 이야기 1</h3>
-            <p>첫 번째 카드 설명 텍스트입니다.</p>
+            <div class="card-title-area">
+              <h2>
+                <span class="small-title">Brand story</span
+                ><span>브랜드 스토리</span>
+              </h2>
+              <p>미에로는 아름다움을 디자인하는 토탈 솔루션 음료입니다.</p>
+            </div>
           </div>
         </article>
         <article class="card">
-          <img src="path/to/image2.jpg" alt="카드 이미지 2" />
+          <img class="card-img" src="path/to/image2.jpg" alt="카드 이미지 2" />
           <div class="card-text">
             <h3>장인 이야기 2</h3>
             <p>두 번째 카드 설명 텍스트입니다.</p>
           </div>
         </article>
         <article class="card">
-          <img src="path/to/image3.jpg" alt="카드 이미지 3" />
+          <img class="card-img" src="path/to/image3.jpg" alt="카드 이미지 3" />
           <div class="card-text">
             <h3>장인 이야기 3</h3>
             <p>세 번째 카드 설명 텍스트입니다.</p>
@@ -147,72 +248,76 @@
       </div>
     </section>
     <!-- history-section  -->
-    <section class="history-section">
-      <div class="history-inner">
-        <!-- 1. 큰 타이틀 -->
-        <div class="history-heading">
-          <h2>우리의 이야기</h2>
-          <p>전통과 함께한 장인의 시간</p>
-        </div>
-      </div>
-    </section>
-    <section class="product-section">
-      <div class="product-intro-section">
-        <div class="product-inner">
-          <div class="product-left">
-            <div class="product-items-wrapper">
-              <div class="product-item">제품 1</div>
-              <div class="product-item">제품 2</div>
-              <div class="product-item">제품 3</div>
-              <div class="product-item">제품 4</div>
-              <div class="product-item">제품 5</div>
+    <div class="story-section">
+      <div class="story-inner">
+        <section class="story-step history-step">
+          <div class="history-inner">
+            <!-- 1. 큰 타이틀 -->
+            <div class="history-heading">
+              <h2>우리의 이야기</h2>
+              <p>전통과 함께한 장인의 시간</p>
             </div>
           </div>
-          <div class="product-right">
-            <div class="fixed-text">
-              <h2>제품 소개</h2>
-              <p>
-                이곳은 고정 텍스트 영역입니다. 제품 설명 혹은 브랜드 메시지를
-                넣을 수 있습니다.
-              </p>
+        </section>
+        <!-- history-section end -->
+        <div class="story-step product-intro-step">
+          <div class="product-inner">
+            <div class="product-left">
+              <div class="product-items-wrapper">
+                <div class="product-item">제품 1</div>
+                <div class="product-item">제품 2</div>
+                <div class="product-item">제품 3</div>
+                <div class="product-item">제품 4</div>
+                <div class="product-item">제품 5</div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- 3. 인기 상품 4개 -->
-      <div class="best-product-section">
-        <h2>인기 상품</h2>
-        <div class="best-products">
-          <div class="best-product">인기상품 1</div>
-          <div class="best-product">인기상품 2</div>
-          <div class="best-product">인기상품 3</div>
-          <div class="best-product">인기상품 4</div>
-        </div>
-      </div>
-      <!-- 4. 후기 영역 -->
-      <div class="review-section">
-        <div class="review-inner">
-          <div class="review-left">
-            <h3>고객 후기</h3>
-            <p>사랑받아온 이유</p>
-          </div>
-          <div class="review-right">
-            <div class="review-wrapper">
-              <article class="review">후기 1</article>
-              <article class="review">후기 2</article>
-              <article class="review">후기 3</article>
-              <article class="review">후기 1</article>
-              <article class="review">후기 2</article>
-              <article class="review">후기 3</article>
+            <div class="product-right">
+              <div class="fixed-text">
+                <h2>제품 소개</h2>
+                <p>
+                  이곳은 고정 텍스트 영역입니다. 제품 설명 혹은 브랜드 메시지를
+                  넣을 수 있습니다.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        <!-- 3. 인기 상품 4개 -->
+        <div class="story-step best-product-step">
+          <h2>인기 상품</h2>
+          <div class="best-products">
+            <div class="best-product">인기상품 1</div>
+            <div class="best-product">인기상품 2</div>
+            <div class="best-product">인기상품 3</div>
+            <div class="best-product">인기상품 4</div>
+          </div>
+        </div>
+        <!-- 4. 후기 영역 -->
+        <!-- <div class="story-step review-step">
+          <div class="review-inner">
+            <div class="review-left">
+              <h3>고객 후기</h3>
+              <p>사랑받아온 이유</p>
+            </div>
+            <div class="review-right">
+              <div class="review-wrapper">
+                <article class="review">후기 1</article>
+                <article class="review">후기 2</article>
+                <article class="review">후기 3</article>
+                <article class="review">후기 1</article>
+                <article class="review">후기 2</article>
+                <article class="review">후기 3</article>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </div>
-      <div class="product-list-list">
-        <!-- 111 <br />111 <br />111 <br />111 <br />111 <br />111 <br />111
+    </div>
+    <!-- story-section end  -->
+    <section class="product-list">
+      <!-- 111 <br />111 <br />111 <br />111 <br />111 <br />111 <br />111
         <br />111 <br />111 <br />111 <br />111 <br />111 <br />111 <br />111
         <br /> -->
-      </div>
     </section>
 
     <section class="brand-section">
@@ -241,8 +346,9 @@
     <script src="./script/timeline.js"></script>
     <script src="./script/card.js"></script>
     <script src="./script/overlap.js"></script>
-    <script src="./script/productIntro.js"></script>
-    <script src="./script/review.js"></script>
+    <!-- <script src="./script/productIntro.js"></script> -->
+    <!-- <script src="./script/review.js"></script> -->
     <script src="./script/brand.js"></script>
+    <script src="./script/story.js"></script>
   </body>
 </html>

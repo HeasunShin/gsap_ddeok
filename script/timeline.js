@@ -2,6 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray(".timeline-item").forEach((item) => {
   const img = item.querySelector(".timeline-right img");
+  if (!img) return;
 
   gsap.fromTo(
     img,
