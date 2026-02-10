@@ -318,6 +318,8 @@ section .caption {
   background: url(../images/card-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
+  /* ---------- cards-outside ---------- */
+  /* ---------- cards-wrapper ---------- */
 }
 .section-cards .cards-outside {
   width: 90%;
@@ -327,20 +329,36 @@ section .caption {
   transform: translateX(-50%);
   padding: 120px 0;
 }
+.section-cards .cards-outside .flex-area {
+  display: flex;
+}
 .section-cards .cards-outside .flex-area .text-box {
   width: 50%;
 }
-.section-cards .cards-outside .flex-area .text-box .text-inbox {
+.section-cards .cards-outside .flex-area .text-box .card-title-area {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+.section-cards .cards-outside .flex-area .text-box .card-title-area h2 {
+  display: flex;
+  flex-direction: column;
+}
+.section-cards .cards-outside .flex-area .text-box .card-title-area h2 span {
+  line-height: 1.4;
+}
+.section-cards .cards-outside .flex-area .text-box .card-title-area h2 span.small-title {
+  color: #f36f21;
+  font-size: 0.5em;
+}
+.section-cards .cards-outside .flex-area .text-box .card-content .text-inbox {
   margin-top: 20px;
 }
-.section-cards .cards-outside .flex-area .text-box .text-inbox h3,
-.section-cards .cards-outside .flex-area .text-box .text-inbox p {
-  color: #fafafa;
-}
-.section-cards .cards-outside .flex-area .text-box .text-inbox h3 {
+.section-cards .cards-outside .flex-area .text-box .card-content .text-inbox h3 {
   position: relative;
 }
-.section-cards .cards-outside .flex-area .text-box .text-inbox h3::before {
+.section-cards .cards-outside .flex-area .text-box .card-content .text-inbox h3::before {
   content: "";
   width: 30px;
   height: 3px;
@@ -354,7 +372,17 @@ section .caption {
   display: inline-block;
 }
 .section-cards .cards-outside .flex-area .img-box img {
-  opacity: 60%;
+  opacity: 0.6;
+}
+.section-cards .cards-outside .flex-area .text-box .card-title-area h2 span {
+  color: #fafafa;
+}
+.section-cards .cards-outside .flex-area .text-box .card-title-area p {
+  color: #fafafa;
+}
+.section-cards .cards-outside .flex-area .text-box .card-content .text-inbox h3,
+.section-cards .cards-outside .flex-area .text-box .card-content .text-inbox p {
+  color: #fafafa;
 }
 .section-cards .cards-wrapper {
   position: relative;
@@ -367,33 +395,70 @@ section .caption {
   left: 0;
   width: 80%;
   height: 100%;
-  background: #ffc845;
   background: linear-gradient(to left, #ffc845 60%, #fff);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  padding: 20px;
+  padding: 40px;
   opacity: 0;
   transform: translateX(100px);
   transition: box-shadow 0.3s ease;
-  border: 3px solid red;
 }
-.section-cards .cards-wrapper .card .card-img {
-  position: absolute;
-  right: 0;
-  width: 500px;
-  opacity: 80%;
+.section-cards .cards-wrapper .card .flex-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
-.section-cards .cards-wrapper .card .card-text {
-  flex: 1;
+.section-cards .cards-wrapper .card .flex-area .text-box {
+  width: 50%;
 }
-.section-cards .cards-wrapper .card .card-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.section-cards .cards-wrapper .card .flex-area .text-box .card-title-area {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 30px;
 }
-.section-cards .cards-wrapper .card .card-text p {
-  font-size: 1rem;
+.section-cards .cards-wrapper .card .flex-area .text-box .card-title-area h2 {
+  display: flex;
+  flex-direction: column;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box .card-title-area h2 span {
   line-height: 1.4;
-  color: #333;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box .card-title-area h2 span.small-title {
+  color: #f36f21;
+  font-size: 0.5em;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box .card-content .text-inbox {
+  margin-top: 20px;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box .card-content .text-inbox h3 {
+  position: relative;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box .card-content .text-inbox h3::before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: #f36f21;
+  position: absolute;
+  top: -5px;
+}
+.section-cards .cards-wrapper .card .flex-area .img-box {
+  width: 50%;
+  position: relative;
+  display: inline-block;
+}
+.section-cards .cards-wrapper .card .flex-area .img-box img {
+  opacity: 0.6;
+}
+.section-cards .cards-wrapper .card .flex-area .img-box {
+  width: 40%;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box {
+  width: 60%;
+}
+.section-cards .cards-wrapper .card .flex-area .text-box .card-content .text-inbox p .primary-color {
+  font-weight: 400;
 }
 .section-cards .cards-wrapper .card:nth-child(1) {
   left: 20%;
@@ -414,19 +479,19 @@ section .caption {
   position: relative;
   z-index: 10;
   background-color: transparent;
-  background-color: #d4bfd8;
   margin-top: -20vh;
 }
 .story-section .story-inner {
   position: relative;
   width: 100%;
-  background-color: #fff;
-  border-radius: 120px 120px 0 0;
+  background-color: #ffc845;
+  border-radius: 120px;
   padding-top: 15vh;
 }
 .story-section .story-inner .story-step {
   position: relative;
   width: 100%;
+  margin-bottom: 50px;
 }
 .story-section .story-inner .story-step.history-step {
   text-align: center;
@@ -461,13 +526,60 @@ section .caption {
   gap: 40px;
 }
 .story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item {
-  padding: 120px 40px;
-  background: #f2f2f2;
+  padding: 25px 35px 20px;
+  background: #ffffff;
   font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  align-items: center;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item img {
+  width: 60px;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec {
+  width: calc(100% - 60px);
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec .spec-group h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec .spec-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec .spec-group ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 4px 0;
+  color: #444;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec .spec-group-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec .nutrition {
+  text-align: right;
+}
+.story-section .story-inner .story-step.product-intro-step .product-inner .product-left .product-items-wrapper .product-item .product-spec .nutrition .nutrition_btn {
+  background-color: #ffc845;
+  margin-right: 0;
+  border-radius: 100px;
+  padding: 5px 15px;
+  font-size: 0.65em;
 }
 .story-section .story-inner .story-step.product-intro-step .product-inner .product-right {
   width: 35%;
-  background-color: #97b4b4;
   position: relative;
 }
 .story-section .story-inner .story-step.product-intro-step .product-inner .product-right .fixed-text {
@@ -482,8 +594,8 @@ section .caption {
   line-height: 1.6;
 }
 .story-section .story-inner .story-step.best-product-step {
-  background-color: #fafafa;
   padding-bottom: 100px;
+  padding-top: 100px;
 }
 .story-section .story-inner .story-step.best-product-step h2 {
   text-align: center;
@@ -612,8 +724,4 @@ section .caption {
 }
 .footer .footer-item {
   opacity: 0.8;
-}space-around;
 }
-.footer .footer-item {
-  opacity: 0.8;
-}/*# sourceMappingURL=styles.css.map */

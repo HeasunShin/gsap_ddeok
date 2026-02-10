@@ -1,5 +1,5 @@
-@use "variables";
-@use "mixins";
+@use "_variables" as *;
+@use "_mixins";
 
 * {
   box-sizing: border-box;
@@ -396,6 +396,62 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
 
+  @mixin card-flex-area($primary-color: #f36f21) {
+    display: flex;
+
+    .text-box {
+      width: 50%;
+      .card-title-area {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 30px;
+
+        h2 {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            line-height: 1.4;
+
+            &.small-title {
+              color: $primary-color;
+              font-size: 0.5em;
+            }
+          }
+        }
+      }
+      .card-content {
+        .text-inbox {
+          margin-top: 20px;
+
+          h3 {
+            position: relative;
+
+            &::before {
+              content: "";
+              width: 30px;
+              height: 3px;
+              background-color: $primary-color;
+              position: absolute;
+              top: -5px;
+            }
+          }
+        }
+      }
+    }
+
+    .img-box {
+      width: 50%;
+      position: relative;
+      display: inline-block;
+
+      img {
+        opacity: 0.6;
+      }
+    }
+  }
+  /* ---------- cards-outside ---------- */
   .cards-outside {
     width: 90%;
     position: absolute;
@@ -404,97 +460,34 @@ section {
     transform: translateX(-50%);
     padding: 120px 0;
 
-    // .card-title-area {
-    //   display: flex;
-    //   align-items: center;
-    //   gap: 50px;
-    //   margin-bottom: 30px;
-    //   h2 {
-    //     display: flex;
-    //     flex-direction: column;
-
-    //     span {
-    //       line-height: 1.4;
-    //       color: #fafafa;
-    //       &.small-title {
-    //         color: $primary-color;
-    //         font-size: 0.5em;
-    //       }
-    //     }
-    //   }
-    //   p {
-    //     color: #fafafa;
-    //   }
-    // }
-
-    @mixin card-title-area(
-      $gap: 50px,
-      $margin-bottom: 30px,
-      $text-color: #fafafa,
-      $small-title-color: $primary-color,
-      $small-title-size: 0.5em
-    ) {
-      display: flex;
-      align-items: center;
-      gap: $gap;
-      margin-bottom: $margin-bottom;
-
-      h2 {
-        display: flex;
-        flex-direction: column;
-
-        span {
-          line-height: 1.4;
-          color: $text-color;
-
-          &.small-title {
-            color: $small-title-color;
-            font-size: $small-title-size;
-          }
-        }
-      }
-
-      p {
-        color: $text-color;
-      }
-    }
-
     .flex-area {
-      .text-box {
-        width: 50%;
+      @include card-flex-area();
 
-        .text-inbox {
-          margin-top: 20px;
-          h3,
+      .text-box {
+        .card-title-area {
+          h2 {
+            span {
+              color: #fafafa;
+            }
+          }
           p {
             color: #fafafa;
           }
-          h3 {
-            position: relative;
-            &::before {
-              content: "";
-              width: 30px;
-              height: 3px;
-              background-color: #f36f21;
-              position: absolute;
-              top: -5px;
+        }
+
+        .card-content {
+          .text-inbox {
+            h3,
+            p {
+              color: #fafafa;
             }
           }
-        }
-      }
-      .img-box {
-        width: 50%;
-        // margin-top: 120px;
-        position: relative;
-        display: inline-block;
-
-        img {
-          opacity: 60%;
         }
       }
     }
   }
 
+  /* ---------- cards-wrapper ---------- */
   .cards-wrapper {
     position: relative;
     width: 100%;
@@ -504,56 +497,51 @@ section {
       position: absolute;
       top: 0;
       left: 0;
-      width: 80%; // 카드 너비 예시 (필요시 조정)
+      width: 80%;
       height: 100%;
-      background: #ffc845;
       background: linear-gradient(to left, #ffc845 60%, #fff);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       border-radius: 12px;
-      padding: 20px;
+      padding: 40px;
       opacity: 0;
-      // transform: translateX(300px);
       transform: translateX(100px);
       transition: box-shadow 0.3s ease;
-      border: 3px solid red;
 
-      .card-img {
-        // height: auto;
-        // object-fit: cover;
-        position: absolute;
-        right: 0;
-        width: 500px;
-        opacity: 80%;
-      }
+      .flex-area {
+        @include card-flex-area();
 
-      .card-text {
-        flex: 1;
-        h3 {
-          font-size: 1.8rem;
-          margin-bottom: 10px;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .img-box {
+          width: 40%;
         }
-        p {
-          font-size: 1rem;
-          line-height: 1.4;
-          color: #333;
+        .text-box {
+          width: 60%;
+          .card-content {
+            .text-inbox {
+              p {
+                .primary-color {
+                  font-weight: 400;
+                }
+              }
+            }
+          }
         }
       }
 
       &:nth-child(1) {
-        // z-index: 1;
-        // top: 20%;
         left: 20%;
         transform: translateX(400px);
       }
+
       &:nth-child(2) {
-        // z-index: 2;
-        // top: 15%;
         left: 25%;
         transform: translateX(350px);
       }
+
       &:nth-child(3) {
-        // z-index: 3;
-        // top: 10%;
         left: 30%;
       }
 
@@ -569,20 +557,20 @@ section {
   position: relative;
   z-index: 10;
   background-color: transparent;
-  background-color: rgb(212, 191, 216);
   margin-top: -20vh;
 
   .story-inner {
     position: relative;
     width: 100%;
-    background-color: #fff;
-    border-radius: 120px 120px 0 0;
+    background-color: $secondary-color;
+    border-radius: 120px;
     padding-top: 15vh;
 
     .story-step {
       position: relative;
       width: 100%;
       // padding: 12vh 0;
+      margin-bottom: 50px;
 
       &.history-step {
         text-align: center;
@@ -621,19 +609,129 @@ section {
               gap: 40px;
 
               .product-item {
-                padding: 120px 40px;
+                // padding: 120px 40px;
+                padding: 25px 35px 20px;
                 // height: 250px;
-                background: #f2f2f2;
+                background: #ffffff;
                 font-size: 1.4rem;
+                display: flex;
+                justify-content: space-between;
+                gap: 100px;
+                align-items: center;
+
+                img {
+                  width: 60px;
+                }
+                .product-spec {
+                  width: calc(100% - 60px);
+                  // padding: 32px 20px;
+
+                  h2 {
+                    font-size: 22px;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                  }
+
+                  .spec-group {
+                    h3 {
+                      font-size: 16px;
+                      font-weight: 600;
+                      margin-bottom: 12px;
+                      padding-bottom: 6px;
+                      border-bottom: 1px solid #ddd;
+                    }
+
+                    ul {
+                      list-style: none;
+                      padding: 0;
+                      margin: 0;
+
+                      li {
+                        font-size: 14px;
+                        line-height: 1.6;
+                        padding: 4px 0;
+                        color: #444;
+                      }
+                    }
+                  }
+
+                  .spec-group-box {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+                  }
+                  .nutrition {
+                    text-align: right;
+                    .nutrition_btn {
+                      background-color: $secondary-color;
+                      margin-right: 0;
+                      border-radius: 100px;
+                      padding: 5px 15px;
+                      font-size: 0.65em;
+                    }
+                  }
+
+                  // .nutrition {
+                  //   table {
+                  //     width: 100%;
+                  //     border-collapse: collapse;
+                  //     font-size: 14px;
+
+                  //     caption {
+                  //       text-align: left;
+                  //       font-size: 13px;
+                  //       color: #666;
+                  //       margin-bottom: 8px;
+                  //     }
+
+                  //     thead {
+                  //       background-color: #f5f5f5;
+
+                  //       th {
+                  //         padding: 10px 8px;
+                  //         font-weight: 600;
+                  //         text-align: left;
+                  //         border: 1px solid #ddd;
+                  //       }
+                  //     }
+
+                  //     tbody {
+                  //       th,
+                  //       td {
+                  //         padding: 9px 8px;
+                  //         border: 1px solid #ddd;
+                  //         vertical-align: middle;
+                  //       }
+
+                  //       th {
+                  //         font-weight: 500;
+                  //         color: #333;
+                  //         background-color: #fafafa;
+                  //         width: 40%;
+                  //       }
+
+                  //       td {
+                  //         color: #444;
+
+                  //         &:nth-child(2) {
+                  //           width: 30%;
+                  //         }
+
+                  //         &:nth-child(3) {
+                  //           width: 30%;
+                  //           color: #666;
+                  //         }
+                  //       }
+                  //     }
+                  //   }
+                  // }
+                }
               }
             }
           }
           .product-right {
             width: 35%;
-            // flex-shrink: 0;
-            background-color: rgb(151, 180, 180);
-            // position: sticky;
-            // height: fit-content;
+
             position: relative;
             .fixed-text {
               // background: #fff;
@@ -652,8 +750,9 @@ section {
         }
       }
       &.best-product-step {
-        background-color: #fafafa;
+        // background-color: #fafafa;
         padding-bottom: 100px;
+        padding-top: 100px;
         h2 {
           text-align: center;
           margin-bottom: 60px;
@@ -811,3 +910,44 @@ section {
     opacity: 0.8;
   }
 }
+
+// @media (max-width: 780px) {
+//   .product-spec {
+//     padding: 24px 16px;
+
+//     h2 {
+//       font-size: 20px;
+//     }
+
+//     .spec-group h3 {
+//       font-size: 15px;
+//     }
+
+//     .nutrition table {
+//       font-size: 13px;
+
+//       thead {
+//         display: none;
+//       }
+
+//       tbody tr {
+//         display: block;
+//         margin-bottom: 12px;
+//         border: 1px solid #ddd;
+//       }
+
+//       tbody th,
+//       tbody td {
+//         display: block;
+//         width: 100%;
+//         border: none;
+//         padding: 6px 10px;
+//       }
+
+//       tbody th {
+//         background: #f5f5f5;
+//         font-weight: 600;
+//       }
+//     }
+//   }
+// }
