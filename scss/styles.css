@@ -124,6 +124,10 @@ body {
 section {
   margin: 0 auto;
 }
+section .inner {
+  width: 90%;
+  margin: auto;
+}
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -594,7 +598,7 @@ section .caption {
   line-height: 1.6;
 }
 .story-section .story-inner .story-step.best-product-step {
-  padding-bottom: 100px;
+  padding-bottom: 150px;
   padding-top: 100px;
 }
 .story-section .story-inner .story-step.best-product-step h2 {
@@ -609,13 +613,18 @@ section .caption {
 }
 .story-section .story-inner .story-step.best-product-step .best-products .best-product {
   flex: 1;
-  height: 220px;
   background: #fff;
   border: 1px solid #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
+}
+.story-section .story-inner .story-step.best-product-step .best-products .best-product img {
+  display: block;
+}
+.story-section .story-inner .story-step.best-product-step .best-products .best-product:hover {
+  opacity: 0.5;
 }
 .story-section .story-inner .story-step.review-step .review-inner {
   width: 90%;
@@ -658,61 +667,115 @@ section .caption {
   background: #f5f5f5;
 }
 
-.brand-section {
+.notice-section {
   background-color: #fff;
   background-size: contain;
   background-position: center;
   transition: background-image 0.5s ease;
+  padding: 70px 0 100px;
 }
-.brand-section .brand-inner {
+.notice-section .notice-inner {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
-.brand-section .brand-inner .brand-left {
-  background-color: rgba(255, 250, 205, 0);
-  width: 50%;
-  height: 500px;
-  cursor: pointer;
+.notice-section .notice-inner ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-.brand-section .brand-inner .brand-right {
-  background-color: rgba(199, 238, 245, 0);
-  width: 50%;
-  height: 500px;
-  cursor: pointer;
+.notice-section .notice-inner ul li h3 {
+  color: #777;
 }
-.brand-section .mouse-follow {
+.notice-section .notice-inner .container {
+  display: inline-block;
+  border-bottom: 2px solid var(--color-surface25);
+  width: 100%;
+  padding: 0.3rem 0 1.5em;
+}
+.notice-section .notice-inner .container img.swipeimage {
   position: fixed;
-  pointer-events: none;
-  width: 150px;
   top: 0;
   left: 0;
+  width: fit-content;
+  object-fit: cover;
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.branch-section {
+.media-section {
   display: flex;
   justify-content: center;
+  background-color: #f36f21;
+  padding: 100px 0;
 }
-.branch-section .branch-inner {
+.media-section .media-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   gap: 50px;
-  width: 100%;
-  max-width: 1600px;
 }
-.branch-section .branch-inner .branch {
+.media-section .media-inner .media {
   width: 50%;
-  height: 800px;
+  display: flex;
+  flex-direction: column;
 }
-.branch-section .branch-inner .branch:hover {
-  border-radius: 100%;
-  transition: all 1s;
+.media-section .media-inner .media h3 {
+  margin-bottom: 20px;
 }
-.branch-section .branch-inner .branch.branch-left {
-  background-image: url(../images/branch01.png);
+.media-section .media-inner .media.media-left {
+  flex: 1;
+  width: 42%;
 }
-.branch-section .branch-inner .branch.branch-right {
-  background-image: url(../images/branch02.png);
+.media-section .media-inner .media.media-left .video-wrap {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.media-section .media-inner .media.media-left .video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.media-section .media-inner .media.media-right {
+  flex: 1;
+  width: 58%;
+}
+.media-section .media-inner .media.media-right .group {
+  text-align: center;
+  white-space: wrap;
+  display: flex;
+  height: 100%;
+  gap: 10px;
+}
+.media-section .media-inner .media.media-right .item {
+  width: 8vw;
+  height: 100%;
+  background-position: center;
+  background-size: 75vh;
+  background-repeat: repeat-x;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+  border: 5px solid #f36f21;
+  opacity: 0.5;
+  position: relative;
+}
+.media-section .media-inner .media.media-right .item span {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  background-color: #fff;
+  color: #f36f21;
+  padding: 0 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  border: 1px solid #f36f21;
 }
 
 .footer {
